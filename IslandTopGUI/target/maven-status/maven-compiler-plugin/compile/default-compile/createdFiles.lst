@@ -1,0 +1,14 @@
+IslandTopGui\Utils\FileUtil.class
+IslandTopGui\Utils\Top10GuiFileUtil.class
+IslandTopGui\Tasks\CreateTop10Inventory.class
+IslandTopGui\Commands\IslandTopGuiCommand.class
+IslandTopGui\Utils\GuiFileUtil.class
+IslandTopGui\Utils\Top16GuiFileUtil.class
+IslandTopGui\Objects\GuiItem.class
+IslandTopGui\Objects\IndividualGui.class
+IslandTopGui\Events\IslandTopGuiEvents.class
+IslandTopGui\Tasks\CreateIslandInventories.class
+IslandTopGui\Tasks\CreateTop16Inventory.class
+IslandTopGui\Commands\OpenIslandValueGui.class
+IslandTopGui\IslandTopGuiPlugin.class
+IslandTopGui\Utils\Util.class

@@ -1,0 +1,12 @@
+name: IslandTopGui
+version: ${project.version}
+main: IslandTopGui.IslandTopGuiPlugin
+authors:
+  - CustomEnchants
+  - Callum
+depend:
+  - IslandTop
+  - PlaceholderAPI
+commands:
+  OpenIslandWorthGui:
+    description: Open a island their value gui

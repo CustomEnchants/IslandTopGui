@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>IslandTopGUI-Reactor</artifactId>
+        <groupId>IslandTopGUI</groupId>
+        <version>parent</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>IslandTopGUI</artifactId>
+    <version>${islandtop-version}</version>
+    <name>IslandTopGui - Plugin</name>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>plugin.yml</include>
+                </includes>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>2.4.1</version>
+                <configuration>
+                    <dependencyReducedPomLocation>${project.build.directory}/dependency-reduced-pom.xml
+                    </dependencyReducedPomLocation>
+                    <relocations>
+                        <relocation>
+                            <pattern>spawnerapi</pattern>
+                            <shadedPattern>IslandTop.api.spawnerapi</shadedPattern>
+                        </relocation>
+                    </relocations>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+        <repository>
+            <id>placeholderapi</id>
+            <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
+        </repository>
+    </repositories>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>me.clip</groupId>
+            <artifactId>placeholderapi</artifactId>
+            <version>LATEST</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <artifactId>Spigot1.8.8</artifactId>
+            <groupId>Spigot1.8.8</groupId>
+            <scope>system</scope>
+            <systemPath>G:/Development - ServerJars/spigot-1.8.8.jar</systemPath>
+            <version>LATEST</version>
+        </dependency>
+        <dependency>
+            <artifactId>IslandTop</artifactId>
+            <groupId>IslandTop</groupId>
+            <scope>system</scope>
+            <systemPath>C:/Users/Brian/Documents/IslandTop - Reactor/IslandTop/target/IslandTop-2.29.0.jar</systemPath>
+            <version>LATEST</version>
+        </dependency>
+
+        <!-- Spawner API -->
+        <dependency>
+            <groupId>IslandTopGUI</groupId>
+            <artifactId>SpawnerAPI</artifactId>
+            <version>${islandtop-version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>Spigot1.8.8</groupId>
+                    <artifactId>Spigot1.8.8</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+    </dependencies>
+
+
+</project>
